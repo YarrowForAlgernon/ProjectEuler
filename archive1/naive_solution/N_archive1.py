@@ -1,4 +1,4 @@
-#naive solution, without abstraction and magic numbers
+import time
 
 def sumOf3():
     sum = 0
@@ -15,9 +15,10 @@ def sumOf5():
     return sum
 
 if __name__ == "__main__":
+    startTime = time.time_ns()
     sum3 = sumOf3()
     sum5 = sumOf5()
-    print(sum3)
-    print(sum5)
     finalSum = sum3 + sum5
     print(finalSum)
+    stopTime = time.time_ns()
+    print("Time taken in nanoseconds: " + str(stopTime - startTime))
