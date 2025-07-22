@@ -1,35 +1,27 @@
 #include <iostream>
 #include <chrono>
 
-int sumOf3() {
-	int sum = 0;
+int sumOfMultiplesUnderN(int multiple, int N = 1000) {
+	
+	int sumOfMultiples = 0;
 
-	for (int i = 0; i < 1000; i++) {
-		if (i % 3 == 0) {
-			sum += i;
+	for (int i = 0; i < N; i++) {
+
+		if (i % multiple == 0) {
+			sumOfMultiples += i;
 		}
 	}
-	return sum;
+	return sumOfMultiples;
 }
 
-int sumOf5() {
-
-	int sum = 0;
-
-	for (int i = 0; i < 1000; i++) {
-		if (i % 5 == 0 && i % 3 != 0) {
-			sum += i;
-		}
-	}
-	return sum;
-}
 
 int main() {
         auto startTime = std::chrono::high_resolution_clock::now();
-	int sum3 = sumOf3();
-	int sum5 = sumOf5();
-	int finalSum = sum3 + sum5;
-	std::cout << finalSum;
+	int sum3 = sumOfMultiplesUnderN(3);
+	int sum5 = sumOfMultiplesUnderN(5);
+	int sum15 = sumOfMultiplesUnderN(15);
+	int finalSum = sum3 + sum5 - sum15; # application of PIE
 	auto stopTime = std::chrono::high_resolution_clock::now();
+	std::cout << finalSum;
 	std::cout << "\nTime taken in nano seconds: " << std::chrono::duration_cast<std::chrono::nanoseconds>(stopTime-startTime).count();
 }
