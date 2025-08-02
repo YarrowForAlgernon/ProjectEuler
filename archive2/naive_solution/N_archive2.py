@@ -9,7 +9,7 @@ def checkIsEven(Term: int) -> bool:
     '''returns true if even, otherwise false'''
     return Term % 2 == 0
 
-def sumTerms():
+def sumTerms() -> int:
     '''gets the sum of all even fib terms under 4 million'''
     currentTerm = 1
     previousTerm = 0
@@ -28,7 +28,4 @@ if __name__ == "__main__":
     evenSum = sumTerms()
     stopTime = time.time_ns()
     print(evenSum)
-    print("Time taken for algorithim to execute in nano seconds: " + str(stopTime - startTime))
-
-
-
+    print("Time taken (ns): " + str(stopTime - startTime))
