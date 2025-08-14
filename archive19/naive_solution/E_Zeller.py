@@ -1,4 +1,35 @@
 from time import time_ns
+from math import floor
+
+
+class ZellersCongruence:
+
+    def __init__(this, day, month, year):
+        
+        this.day = day
+        this.month = month
+        this.year = year
+        this.adjustDates()
+
+    def adjustDates(this):
+        if this.month == 1 or this.month == 2:
+            this.year -= 1
+            this.month += 12
+
+    def dayToTextConversion(this, dayOfWeek):
+        dayOfWeekDict = {0: "Saturday", 1: "Sunday", 2: "Monday", 3: "Tuesday", 4: "Wednesday", 5: "Thursday", 6: "Friday"}
+        return dayOfWeekDict[dayOfWeek]
+
+    
+    def getDayOfWeek(this):
+
+        monthCode = floor((13 * (this.month + 1)) / 5)
+        print(monthCode)
+        dayOfWeek = this.day + monthCode + this.year + floor(this.year / 4) - floor(this.year / 100) + floor(this.year / 400)
+        dayOfWeek %= 7
+        print(dayOfWeek)
+        dayOfWeekString = this.dayToTextConversion(dayOfWeek)
+        return dayOfWeekString
 
 
 class archive19:
@@ -36,6 +67,10 @@ class archive19:
         if this.dayCount == 1:
             this.sundayCount += 1
 
+    
+    def incrementWeek(this):
+        this.dayCount += 7
+
 
     def incrementYear(this):
         this.yearCount += 1
@@ -45,9 +80,10 @@ class archive19:
     def calculateDaysOnFirstOfMonth(this):
         '''calculates all days that fall on the first of a month.'''
 
-        while this.yearCount  < 2001:
+        while this.yearCount  < 2100:
 
-            this.dayCount += 7
+            this.incrementWeek()
+
 
             if this.checkDayCounterExceedsMonth():
                 this.setDayCounter()
@@ -58,7 +94,7 @@ class archive19:
 
             this.checkForFirstSunday()
 
-        return this.sundayCount
+        return this.sundayCount - 2
 
 
 if __name__ == "__main__":
