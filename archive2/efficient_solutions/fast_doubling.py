@@ -51,7 +51,7 @@ def sumEvenTerms(n: int) -> float:
     return evenSum
 
 
-def main(n: int = 333) -> int:
+def main(n: int = 33) -> int:
     '''if n isn't an even term, it will set it to the last even term, 
     in order to calculate the sum of all previous even terms.'''
     if n % 3 != 0:
