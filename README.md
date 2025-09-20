@@ -2,11 +2,10 @@
 
 This repository serves as a walk through of the first 100 ProjectEuler archives.
 
-The focus of each archive will be less on the answer and more on the mathematical ideas behind them.
-In-depth solutions can be found in the form of a PDF located in each archive folder.
+A pdf explanation of each archived problem can be found in each archives' directory. These walkthroughs focus less on the coded solutions and instead explain the maths behind them.
 
 ## Archive format
 
-Archives will be split into (where possible) two directories, 'naive\_solution', 'efficient\_solutions' and a pdf explanation, which delves into the mathematical thought behind each solution.
+Archives will be split into seperate directories named after and containing their respective solutions. These directories will also contain a README with the archived problems description and title on the (ProjectEuler website)[https://projecteuler.net/]
 
-Solutions are coded in python and eventually C++
+Solutions are coded in python first and eventually C++.

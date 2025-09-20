@@ -78,8 +78,3 @@ if __name__ == "__main__":
 	answer = LetterCounts()
 	stopTime = time_ns()
 	print("answer: ", answer.totalLettersUsed, "\nTime taken (ms): ", (stopTime - startTime) / 1000000)
-		
-
-
-
-	
